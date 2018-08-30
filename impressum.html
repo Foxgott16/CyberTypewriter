@@ -1,0 +1,299 @@
+ <html>
+            <head>
+
+            <title>Title</title>
+
+			
+			
+			<style type="text/css">
+
+             
+
+            body {
+
+             
+
+            background: black;
+
+             
+
+            background-repeat: no-repeat;
+
+         
+
+            background-position: center;
+
+           
+
+            background-attachment: fixed;
+
+           
+
+            }
+
+           
+
+            </style>
+			
+			 <script type="text/javascript">
+  function moveWin()
+  {  
+    window.scroll(0,10000);
+    setTimeout('moveWin()',1000);
+  }
+  </script>
+  
+            </head>
+
+            <body onLoad="writetext()">
+
+			<body onLoad="moveWin()">
+			
+            <script language="JavaScript">
+
+         
+
+            msg = new Array(); //strings written in screen
+
+             
+			msg[0] = "<h1><font face='Courier' color='red' new size='5'>HEAD 1</font></h1>";
+             
+
+			msg[1] = "<h2><font face='Courier' color='#FFFFFF' new size='5'>HEAD 2</font></h2>";
+
+             
+
+            msg[2] = "<font face='Courier' color='#FFFFFF' new size='3'>Line 1<br>Line 2<br>Line 3<br>Line 4<br>Line 5<br>Line 6<br>Line 7</font></b>";
+
+					
+			
+			msg[3] = "<font face='Courier' color='red' new size='4'><br><br><br><br><br><center> =================================================== </center></font>";
+             
+
+			 
+            msg[4] = "<font face='Courier' color='#FFFFFF' new size='4'><center>center</center></font>";
+			
+			
+			
+			msg[5] = "<font face='Courier' color='red' new size='7'><center><b>some big text</b></center></font>";
+			
+			
+			
+			msg[6] = "<font face='Courier' color='blue' new size='3'><center>blue</center></font>";
+			
+			
+			
+			msg[7] = "<font face='Courier' color='red' new size='4'><center> =================================================== </center></font>";
+             
+
+			
+			
+
+			
+			
+			
+
+             
+
+
+
+           
+
+
+             
+
+            text1 = ""; //the same as text2, only the last character is highlighted
+
+             
+
+            text2 = ""; //current string, which will be written
+
+             
+
+            count = 0; //char index in string text
+
+             
+
+            count2 = 0; //number of strings
+
+             
+
+            text = msg[0].split(""); //text - string written
+
+             
+
+            function writetext() { //show strings above on screen
+
+             
+
+            text1 = text2 + "<font color='#FFFFFF'>" + text[count] + "</font>";
+
+             
+
+            text2 += text[count];
+
+             
+
+            document.all["nothing"].innerHTML = text1; //where to write
+
+             
+
+            if (count < text.length-1){
+
+         
+
+          count++;
+
+         
+
+          setTimeout('writetext()', 35);
+
+         
+
+          }
+
+         
+
+          else { //if this string is written, get the new string
+
+         
+
+          count = 0;
+
+         
+
+          if (count2 != 15) { //write 15 strings
+
+         
+
+          count2++;
+
+         
+
+          text2 += ""; //a new line
+
+         
+
+          text = eval('msg['+count2+'].split("")'); //get the new string to text
+
+         
+
+          setTimeout('writetext()', 1);
+
+         
+
+          }
+
+         
+
+          }
+
+         
+
+          }
+
+         
+
+          </script>
+
+         
+
+            <script language="JavaScript">
+
+             
+
+            /* Disable
+
+         
+
+          function disableselect(e){
+
+         
+
+          return false
+
+         
+
+          }
+
+         
+
+          function reEnable(){
+
+         
+
+          return true
+
+         
+
+          }
+
+         
+
+          //if IE4+
+
+         
+
+          document.onselectstart=new Function ("return false")
+
+         
+
+          document.oncontextmenu=new Function ("return false")
+
+         
+
+          //if NS6
+
+         
+
+          if (window.sidebar){
+
+         
+
+          document.onmousedown=disableselect
+
+         
+
+          document.onclick=reEnable
+
+         
+
+          }
+
+         
+
+          */
+
+             
+
+            </script>
+
+            <div id="nothing" style="font-family: 'Courier';">
+
+            <h2><u>
+
+            <center><br>
+
+            <span style="color: rgb(255, 255, 255);"><br>
+
+            </span></center>
+
+            </u></h2>
+
+            <p><b><br>
+
+         
+
+            <font color="#FFFFFF" face="Courier"> </font></b></p>
+
+            <p>Waiting...</p>
+
+            %2</div>
+			
+			
+			
+
+
+            </body>
+
+            </html>
